@@ -1,0 +1,1 @@
+ run -it -p 3000:3000 -v /app/node_modules -v /d/courses/docker/frontend:/app -e CHOKIDAR_USEPOLLING=true   d00cbe10df34d8e209ae2af03531a4b253f65fcaabea0fd8e889d7d6bb69677d
