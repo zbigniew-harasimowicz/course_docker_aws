@@ -8,4 +8,4 @@ before_install:
   - docker build -t zbyszekha/course_docker_aws -f Dockerfile.dev .
 
 script: 
-  - docker run -e CI=true zbyszekha/course_docker_aws nmp run test
+  - docker run -e CI=true zbyszekha/course_docker_aws npm run test
