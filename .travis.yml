@@ -14,7 +14,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'eu-central-1'
   app: 'docker-course'
-  env: 'Dockercourse-env'
+  env: ' Dockercourse-env-1'
   bucket_name: 'elasticbeanstalk-eu-central-1-183816999283'
   bucket_path: 'docker-course'
   on:
