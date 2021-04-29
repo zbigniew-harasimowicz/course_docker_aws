@@ -5,10 +5,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+  - docker build -t zbyszekha/course_docker_aws  -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true stephengrider/docker-react npm run test
+  - docker run -e CI=true zbyszekha/course_docker_aws npm run test
 
 deploy:
   provider: elasticbeanstalk
@@ -19,3 +19,5 @@ deploy:
   bucket_path: 'docker-course'
   on:
     branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY 
