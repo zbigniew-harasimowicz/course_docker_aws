@@ -5,7 +5,17 @@ services:
   - docker
 
 before_install:
-  - docker build -t zbyszekha/course_docker_aws -f Dockerfile.dev .
+  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
 
-script: 
-  - docker run -e CI=true zbyszekha/course_docker_aws npm run test
+script:
+  - docker run -e CI=true stephengrider/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-central-1'
+  app: 'docker-course'
+  env: 'Dockercourse-env'
+  bucket_name: 'elasticbeanstalk-eu-central-1-183816999283'
+  bucket_path: 'docker-course'
+  on:
+    branch: master
